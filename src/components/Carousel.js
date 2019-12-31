@@ -464,7 +464,8 @@ class Carousel extends Component {
     };
 
     increment = (positions = 1, fromSwipe = false) => {
-        this.moveTo(this.state.selectedItem + (typeof positions === 'number' ? positions : 1), fromSwipe);
+        var selectedItem = _this.state.selectedItem === 0 ? 2 : _this.state.selectedItem;
+        this.moveTo(selectedItem + (typeof positions === 'number' ? positions : 1), fromSwipe);
     };
 
     moveTo = (position, fromSwipe) => {
